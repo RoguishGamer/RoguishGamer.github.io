@@ -36,170 +36,17 @@
 <script src="https://cdn.cookielaw.org/consent/7665fa03-a0ea-4c87-a34f-c8d13d663b42/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="7665fa03-a0ea-4c87-a34f-c8d13d663b42" ></script>
 <script type="text/javascript">
 function OptanonWrapper() { }
-</script>
-<!-- OneTrust Cookies Consent Notice end for streamlabs.com -->  </head>
-  <body class="night">
-    <style>
-    .loading-spinner-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 250ms ease-in-out;
-        opacity: 1;
-        pointer-events: none;
+<!-- Add a placeholder for the Twitch embed -->
+<div id="twitch-embed"></div>
 
-        background-size: cover;
-        background-position: center top;
-        background-image: url(https://sp-cdn.streamlabs.com/img/033e06586eaa3bea697f2a1a771a8deb/Gvj6a54hhvu5cozAPePA7jDsQGcqmrIyuSdScVo9.png);
-        background-color: #FFFFFF;
-    }
+<!-- Load the Twitch embed script -->
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
 
-    .loading-spinner {
-        width: 72px;
-        height: 72px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .loading-spinner > div {
-        display: inline-flex;
-        height: 24px;
-        width: 24px;
-        animation: cube 1.5s infinite ease-in-out;
-    }
-
-    .loading-spinner > div > div {
-        height: 100%;
-        width: 100%;
-        background-image: url(https://static-cdn.jtvnw.net/jtv_user_pictures/a6ba706d-dca7-4971-9b37-448a1ba2762b-profile_image-300x300.png);
-        background-size: 72px 72px;
-        background-position: -9999px -9999px;
-        background-repeat: no-repeat;
-    }
-
-    .loading-spinner div:nth-child(1) {
-        animation-delay: 200ms;
-    }
-    .loading-spinner div:nth-child(1) div {
-        border-radius: 6px 0 0 0;
-        background-position: 0% 0%;
-    }
-
-    .loading-spinner div:nth-child(2) {
-        animation-delay: 300ms;
-    }
-    .loading-spinner div:nth-child(2) div {
-        background-position: 50% 0%;
-    }
-
-    .loading-spinner div:nth-child(3) {
-        animation-delay: 400ms;
-    }
-    .loading-spinner div:nth-child(3) div {
-        border-radius: 0 6px 0 0;
-        background-position: 100% 0%;
-    }
-
-    .loading-spinner div:nth-child(4) {
-        animation-delay: 100ms;
-    }
-    .loading-spinner div:nth-child(4) div {
-        background-position: 0% 50%;
-    }
-
-    .loading-spinner div:nth-child(5) {
-        animation-delay: 200ms;
-    }
-    .loading-spinner div:nth-child(5) div {
-        background-position: 50% 50%;
-    }
-
-    .loading-spinner div:nth-child(6) {
-        animation-delay: 300ms;
-    }
-    .loading-spinner div:nth-child(6) div {
-        background-position: 100% 50%;
-    }
-
-    .loading-spinner div:nth-child(7) {
-        animation-delay: 0ms;
-    }
-    .loading-spinner div:nth-child(7) div {
-        border-radius: 0 0 0 6px;
-        background-position: 0% 100%;
-    }
-
-    .loading-spinner div:nth-child(8) {
-        animation-delay: 100ms;
-    }
-    .loading-spinner div:nth-child(8) div {
-        background-position: 50% 100%;
-    }
-
-    .loading-spinner div:nth-child(9) {
-        animation-delay: 200ms;
-    }
-    .loading-spinner div:nth-child(9) div {
-        border-radius: 0 0 6px 0;
-        background-position: 100% 100%;
-    }
-
-    @keyframes  cube {
-
-        0%,
-        70%,
-        100% {
-            transform: scale(1, 1);
-        }
-
-        35% {
-            transform: scale(0, 0);
-        }
-    }
-</style>
-
-    <input type="hidden" id="username" value="mr_charlieplays" />
-    <div id="app" class="main">
-    </div>
-
-    <script src="https://www.paypalobjects.com/api/checkout.min.js?v=1"></script>
-    <script src="https://sp.streamlabs.com/js/manifest.js?id=01c8731923a46c30aaed"></script>
-    <script src="https://sp.streamlabs.com/js/vendor.js?id=72501192e27566ff96a1"></script>
-    <script src="https://sp.streamlabs.com/js/site.js?id=333865e23467cdcf681a"></script>
-    <script src="https://sp.streamlabs.com/js/particles.js?id=1983f25f61c3881f25d8"></script>
-    <script src="https://payments.openalerts.com/js/oapayment.js?v=1.1"></script>
-
-    <script src="https://kit.fontawesome.com/b10c6226ba.js" async></script>
-
-<!-- fonts -->
-<link href="https://cdn.streamlabs.com/icons/style.css" rel="stylesheet" />
-
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
-<!-- css hover for button animations -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-
-<!-- Roboto is loaded by Beaker 'Roboto:400,500,700' -->
-<script>
-  WebFont.load({
-    google: {
-      families: ['Muli:900', 'Nunito:200,600', 'Roboto']
-    }
+<!-- Create a Twitch.Player object. This will render within the placeholder div -->
+<script type="text/javascript">
+  new Twitch.Player("twitch-embed", {
+    channel: "mr_charlieplays"
   });
 </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103165798-2"></script>
-<script type="text/plain" class="optanon-category-C0004">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-103165798-2');
-    gtag('send', 'PageView');
-</script>    <!-- tmp -->
   </body>
 </html>

@@ -1,437 +1,217 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="mr_charlieplays&#039;s official website powered by Streamlabs">
+    <meta name="keywords" content="mr_charlieplays, Twitch, Tip, Donation, Livestream, Official">
+    
+            <link rel="icon" type="image/png" href="https://static-cdn.jtvnw.net/jtv_user_pictures/a6ba706d-dca7-4971-9b37-448a1ba2762b-profile_image-300x300.png">
+        <meta property="og:image" content="https://static-cdn.jtvnw.net/jtv_user_pictures/a6ba706d-dca7-4971-9b37-448a1ba2762b-profile_image-300x300.png">
+    
+          <meta property="og:description" content="mr_charlieplays&#039;s official website powered by Streamlabs">
+      <meta name="twitter:description" content="mr_charlieplays&#039;s official website powered by Streamlabs">
+              <meta name="twitter:title" content="mr_charlieplays / Streamlabs">
+      <meta property="og:title" content="mr_charlieplays / Streamlabs">
+              <meta property="og:url" content="https://www.streamlabs.com/mr_charlieplays/home">
+    
+    <meta name="twitter:card" content="summary_large_image">
 
-    <title>RoguishGamer - GitHub.io</title>
+          <meta name="theme-color" content="#FFFFFF">
+    
+    <title>Streamlabs</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- we can defer loading recaptcha from the contact form when needed -->
+    <link rel="dns-prefetch" href="https://streamlabs.com">
+    <link rel="dns-prefetch" href="https://sp.streamlabs.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://sp.streamlabs.com/css/all.css?id=de56ec5fe2c2ee5620a9" type="text/css">
+    <script src="https://www.instagram.com/embed.js" async ></script>
+    <script src="https://embed.twitch.tv/embed/v1.js" async></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+    <!-- OneTrust Cookies Consent Notice start for streamlabs.com -->
 
-    <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+<script src="https://cdn.cookielaw.org/consent/7665fa03-a0ea-4c87-a34f-c8d13d663b42/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="7665fa03-a0ea-4c87-a34f-c8d13d663b42" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for streamlabs.com -->  </head>
+  <body class="night">
+    <style>
+    .loading-spinner-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 250ms ease-in-out;
+        opacity: 1;
+        pointer-events: none;
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        background-size: cover;
+        background-position: center top;
+        background-image: url(https://sp-cdn.streamlabs.com/img/033e06586eaa3bea697f2a1a771a8deb/Gvj6a54hhvu5cozAPePA7jDsQGcqmrIyuSdScVo9.png);
+        background-color: #FFFFFF;
+    }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    .loading-spinner {
+        width: 72px;
+        height: 72px;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-</head>
+    .loading-spinner > div {
+        display: inline-flex;
+        height: 24px;
+        width: 24px;
+        animation: cube 1.5s infinite ease-in-out;
+    }
 
-<body id="page-top" class="index">
+    .loading-spinner > div > div {
+        height: 100%;
+        width: 100%;
+        background-image: url(https://static-cdn.jtvnw.net/jtv_user_pictures/a6ba706d-dca7-4971-9b37-448a1ba2762b-profile_image-300x300.png);
+        background-size: 72px 72px;
+        background-position: -9999px -9999px;
+        background-repeat: no-repeat;
+    }
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">RoguishGamer.GitHub.io</a>
-            </div>
+    .loading-spinner div:nth-child(1) {
+        animation-delay: 200ms;
+    }
+    .loading-spinner div:nth-child(1) div {
+        border-radius: 6px 0 0 0;
+        background-position: 0% 0%;
+    }
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    .loading-spinner div:nth-child(2) {
+        animation-delay: 300ms;
+    }
+    .loading-spinner div:nth-child(2) div {
+        background-position: 50% 0%;
+    }
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="https://avatars3.githubusercontent.com/u/24543277?v=3&s=460" alt="">
-                    <div class="intro-text">
-                        <span class="name">RoguishGamer</span>
-                        <hr class="star-light">
-                        <span class="skills">Novice Web Developer - Novice Graphic Artist - Video Game Enthusiast</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    .loading-spinner div:nth-child(3) {
+        animation-delay: 400ms;
+    }
+    .loading-spinner div:nth-child(3) div {
+        border-radius: 0 6px 0 0;
+        background-position: 100% 0%;
+    }
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Portfolio - GitHub Projects</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/bootstrap.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/rss-logo-icon-png-11301.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    .loading-spinner div:nth-child(4) {
+        animation-delay: 100ms;
+    }
+    .loading-spinner div:nth-child(4) div {
+        background-position: 0% 50%;
+    }
 
-    <!-- About Section -->
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Hi I'm RoguishGamer! I enjoy web development and video games.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>I just joined GitHub and thought I would try out a project of my own before contributuing to other projects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    .loading-spinner div:nth-child(5) {
+        animation-delay: 200ms;
+    }
+    .loading-spinner div:nth-child(5) div {
+        background-position: 50% 50%;
+    }
 
-    <!-- Footer -->
-    <footer class="text-center" id="contact">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3 style="color:red">Location</h3>
-                        <p>Devon
-                            <br>UK</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3 style="color:red">Contact Me</h3>
-                        <p>You can contact me at these links.</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://twitter.com/RoguishGamer" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3 style="color:red">Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://www.linkedin.com/in/scott-armstrong-627636128?" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/RoguishGamer" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3 style="color:red">GitHub</h3>
-                        <p>Currently working on this website project and will be starting another project soon.</p>
-<blockquote class="embedly-card" data-card-key="c6dd3bc79d4c4063b33ce03acfb6e9a9" data-card-controls="0" data-card-theme="dark" data-card-type="article"><h4><a target="_blank" href="https://github.com/RoguishGamer/RoguishGamer.github.io">RoguishGamer/RoguishGamer.github.io</a></h4><p>RoguishGamer.github.io - Freelancer Bootstrap Template from http://startbootstrap.com/</p></blockquote>
-<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Scott Armstrong 2016
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    .loading-spinner div:nth-child(6) {
+        animation-delay: 300ms;
+    }
+    .loading-spinner div:nth-child(6) div {
+        background-position: 100% 50%;
+    }
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+    .loading-spinner div:nth-child(7) {
+        animation-delay: 0ms;
+    }
+    .loading-spinner div:nth-child(7) div {
+        border-radius: 0 0 0 6px;
+        background-position: 0% 100%;
+    }
+
+    .loading-spinner div:nth-child(8) {
+        animation-delay: 100ms;
+    }
+    .loading-spinner div:nth-child(8) div {
+        background-position: 50% 100%;
+    }
+
+    .loading-spinner div:nth-child(9) {
+        animation-delay: 200ms;
+    }
+    .loading-spinner div:nth-child(9) div {
+        border-radius: 0 0 6px 0;
+        background-position: 100% 100%;
+    }
+
+    @keyframes  cube {
+
+        0%,
+        70%,
+        100% {
+            transform: scale(1, 1);
+        }
+
+        35% {
+            transform: scale(0, 0);
+        }
+    }
+</style>
+<div data-cy="live-site-loader" class="loading-spinner-container">
+    <div class="loading-spinner">
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+        <div><div></div></div>
+    </div>
+</div>
+    <input type="hidden" id="username" value="mr_charlieplays" />
+    <div id="app" class="main">
     </div>
 
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Bootstrap Project</h2>
-                            <hr class="star-primary">
-                            <img src="img/bootstrap.png" class="img-responsive img-centered" alt="">
-                            <p>I enjoy using the Bootstrap framework whenever I decide to make a website from scratch.
-                            This website is the Bootstrap Project.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong>N/A</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong>December 2016</strong>
-                                </li>
-                                <li>Service:
-                                    <strong>Web Development</strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>RSS Reader</h2>
-                            <hr class="star-primary">
-                            <img src="img/rss-logo-icon-png-11301.png" class="img-responsive img-centered" alt="">
-                            <p>Something I am looking into making.</p>
-                        
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong>N/A
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong>2016
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong>Development
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="https://www.paypalobjects.com/api/checkout.min.js?v=1"></script>
+    <script src="https://sp.streamlabs.com/js/manifest.js?id=01c8731923a46c30aaed"></script>
+    <script src="https://sp.streamlabs.com/js/vendor.js?id=72501192e27566ff96a1"></script>
+    <script src="https://sp.streamlabs.com/js/site.js?id=333865e23467cdcf681a"></script>
+    <script src="https://sp.streamlabs.com/js/particles.js?id=1983f25f61c3881f25d8"></script>
+    <script src="https://payments.openalerts.com/js/oapayment.js?v=1.1"></script>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b10c6226ba.js" async></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- fonts -->
+<link href="https://cdn.streamlabs.com/icons/style.css" rel="stylesheet" />
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+<!-- css hover for button animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 
-    <!-- Theme JavaScript -->
-    <script src="js/freelancer.min.js"></script>
-
-</body>
-
+<!-- Roboto is loaded by Beaker 'Roboto:400,500,700' -->
+<script>
+  WebFont.load({
+    google: {
+      families: ['Muli:900', 'Nunito:200,600', 'Roboto']
+    }
+  });
+</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103165798-2"></script>
+<script type="text/plain" class="optanon-category-C0004">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-103165798-2');
+    gtag('send', 'PageView');
+</script>    <!-- tmp -->
+  </body>
 </html>
